@@ -1,7 +1,7 @@
 # Taller 2 Robótica
-***  Grupo 3***
+*** Grupo 3 ***
 
-Dentro de este README se encontraráun paso a paso de cómo probar el funcionamiento de nuestro taller 1. Este taller se divide en 4 puntos, cabe resaltar que **todos los puntos deben ejectuarse desde el *workspace* donde se encuentre el taller**.  Otra cosa que cabe tener en cuenta es que se debe ejecutar el simulador de *coppelia* con la escena que se usará,  e este caso es la escena **turtlebot2_scene_taller1.ttt**.
+Dentro de este README se encontraráun paso a paso de cómo probar el funcionamiento de nuestro taller 2. Este taller se divide en 4 puntos, cabe resaltar que **todos los puntos deben ejectuarse desde el *workspace* donde se encuentre el taller**.  Otra cosa que se debe tener en cuenta es que ahora se van a depender del hardware del robot.
 
 
 [TOC]
@@ -36,8 +36,21 @@ O también se puede
 
 Luego de descargar todas las dependecias es posible seguir con el desarrollo del taller.
 
+Iniciar robot
+---
+Para iniciar el robot se deben hacer los siguientes pasos:
+Iniciar roscore:
 
-####Desarrollo del taller
+`$  roscore`
+
+En otra terminal iniciar el ROSserial:
+
+`$  rosrun rosserial_pyhton serial_node <Nombre del puerto del aruino>`
+
+Donde se debe reemplazar <Nombre del puerto del arduino> por el que corresponda. Para verificar que el proceso se hizo correctamente se puede ejecutar en una terminal `$ rostopic list`. Y deberían aparecer los tópicos /turtlebot_position y /turtlebot_cmdVel
+
+
+Desarrollo del taller
 ---
 
 ##### Punto 1
