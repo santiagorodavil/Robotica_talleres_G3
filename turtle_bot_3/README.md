@@ -34,6 +34,18 @@ O también se puede
 
 `$ sudo apt install python-tk  `
 
+**rosserial**
+
+`$ sudo apt-get install ros-noetic-rosserial-arduino  `
+`$ sudo apt-get install ros-noetic-rosserial  `
+
+
+Adicionalmente, es necesario descargar la libreria de ros para el entorno arduino:
+`$ cd Arduino/libraries  `
+`$ rm -rf ros_lib `
+`$ rosrun rosserial_arduino make_libraries.py  `
+Donde "Arduino" es la carpeta que se crea por defecto en el directorio de inicio
+
 Luego de descargar todas las dependecias es posible seguir con el desarrollo del taller.
 
 Iniciar robot
@@ -54,13 +66,13 @@ Desarrollo del taller
 ---
 
 ##### Punto 1
-En este punto se pedía crear un nodo llamado *Turtle_bot_teleop* en donde se le pudiera ingresar la velocidad lineal y angular deseada para mover al robot.
+En este punto se pedía crear un nodo llamado *general_movemet_send_vel* en donde se le pudiera ingresar la velocidad lineal y angular deseada para mover al robot.
 
-Estando en la terminal se entrará en el ws y se ejecutarán las siguientes líneas:
+Estando en una terminal se entrará en el ws y se ejecutarán las siguientes líneas:
 
 `$  source devel/setup.bash`
 
-`$  rosrun turtle_bot_3  turtlebot_teleop.py`
+`$  rosrun turtle_bot_3  general_movemet_send_vel.py`
 
 Acto seguido, debe aparecer en la terminal lo siguiente:
 
@@ -92,13 +104,12 @@ Lo que se pedía para este punto era modificar los nodos ateriormente creados pa
 
 **Importante:** es necesario que cuando se vaya a correr este punto (en general, todos los puntos), se encuentre la terminal en el *workspace* donde se encuentra el paquete.
 
-Teniendo en cuenta lo anterior, si aún no se han cerrado las terminales de *Turtle_bot_teleop* y *Turtle_bot_interface*, diríjase a la ventana de la interfaz. En caso de que se hayan detenido los procesos, repita los pasos de los puntos 1 y 2.
+Teniendo en cuenta lo anterior, si aún no se han cerrado las terminales de *general_movemet_send_vel.py* y *Turtle_bot_interface*, diríjase a la ventana de la interfaz. En caso de que se hayan detenido los procesos, repita los pasos de los puntos 1 y 2.
 
 Ahora que se está en la interfaz, lo que se debe hacer ahora es presionar el botón de "Guardar recorrido", una vez presionado aparecerán otros dos botones. Si desea guardar el archivo, presione el botón que diga "Guardar archivo" y en la ventana que surge escriba el nombre con el cual quiere guardar el archivo del recorrido.
 
-Finalmente, para revisar si se guardó el recorrido con el nombre deseado puede dirijirse a lla carpeta de **results** y verificar si allí se encuentra el documento. 
+Finalmente, para revisar si se guardó el recorrido con el nombre deseado puede dirijirse a la carpeta de **results** y verificar si allí se encuentra el documento. 
 
-**NOTA: ** Cuando esté usado el *turtlebot_teleop* y quiera guardar el recorrido **es necesario** oprimir la letra **g**, esta tecla lo que hace es guardar el recorrido hasta el momento donde se oprimió dicha tecla. De lo contrario, el archivo continuará escribiendo el movimiento que tenga el robot hasta que se cambie el nombre del archivo o hasta que se presione la tecla **"g"**.
 
 Teniendo en cuenta TODAS las advertencias y notas que se plantean se puede dar por terminado el punto 3.
 
