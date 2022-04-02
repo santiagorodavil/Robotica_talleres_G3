@@ -87,6 +87,12 @@ Luego de esto ya debería ser posible presionar las teclas *a, s, d, w *   para 
 
 ##### Punto 2
 Para este punto se pedía crear un nodo llamado *Turtle_bot_interface* , en donde se pueda ver en tiempo real la posición del robot.  Esto debe poder verse dentro de una interfaz y poder guardar como una imagen el recorrido del robot.
+  
+Para esto se debe hacer lo siguiente en una terminal nueva (cabe resaltar que la terminal debe estar en el ws):
+
+`$  source devel/setup.bash`
+
+`$  rosrun turtle_bot_3  odometria.py`  
 
 Para esto se debe hacer lo siguiente en una terminal nueva (cabe resaltar que la terminal debe estar en el ws):
 
