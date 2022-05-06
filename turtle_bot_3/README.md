@@ -128,44 +128,14 @@ Si se presiona el botón de "página de gráfica" debería aparecer la gráfica 
 
 
 ##### Punto 3
-Lo que se pedía para este punto era modificar los nodos ateriormente creados para guardar el recorrido que realizó  en robot dentro de un archivo *.txt*. Cabe aclarar que el nobre del archivo se le pedirá al usuario y este archivo se guardará dentro de la carpeta  **results** que se encuentra dentro del paquete *turtle_bot_3*.
-
+ 
+Este punto pide crear un nodo en ROS, llamado */robot_manipulator_planner*, que permita a un usuario llevar el end-effector del robot a una posición destino deseada dentro de su volumen de trabajo. Se realiza el cálculo de cinemática inversa o de planeación de trayectorias para alcanzar esta posición. La posición a alcanzar será publicada en el tópico llamado: */robot_manipulator_goal* .
+  
 **Importante:** es necesario que cuando se vaya a correr este punto (en general, todos los puntos), se encuentre la terminal en el *workspace* donde se encuentra el paquete.
 
-Teniendo en cuenta lo anterior, si aún no se han cerrado las terminales de *general_movemet_send_vel.py* y *Turtle_bot_interface*, diríjase a la ventana de la interfaz. En caso de que se hayan detenido los procesos, repita los pasos de los puntos 1 y 2.
-
-Ahora que se está en la interfaz, lo que se debe hacer ahora es presionar el botón de "Guardar recorrido", una vez presionado aparecerán otros dos botones. Si desea guardar el archivo, presione el botón que diga "Guardar archivo" y en la ventana que surge escriba el nombre con el cual quiere guardar el archivo del recorrido.
-
-Finalmente, para revisar si se guardó el recorrido con el nombre deseado puede dirijirse a la carpeta de **results** y verificar si allí se encuentra el documento. 
-
-
-Teniendo en cuenta TODAS las advertencias y notas que se plantean se puede dar por terminado el punto 3.
-
-
+Teniendo en cuenta lo anterior, si aún no se han cerrado las terminales de *general_movemet_send_vel.py* y *robot_manipulator3dbot_interface*, diríjase a la ventana de la interfaz. En caso de que se hayan detenido los procesos, repita los pasos de los puntos 1 y 2.
+************** COMPLETAR
 
 ##### Punto 4
-Para este punto se pedía hacer un nodo llamado *turtle_bot_player* el cual recibirá como parámetro el nombre de un archivo donde se encuentren las acciones del robot.
-
-En la terminal, estando en el ws donde se encuentra el paquete se debe colocar lo siguiente:
-
-`$  source devel/setup.bash`
-
-`$  rosrun turtle_bot_3  turtlebot_player.py`
-
-Acto seguido, dentro de esa terminal debería aparecer un mensaje que dice lo siguiente:
-
-`Listo para recibir nombre`
-
-Cuando esto aparezca dentro de la termial,  en una nueva terminal se debe ejecutar lo siguiente:
-
-`$  source devel/setup.bash`
-
-`$ rosservice call /cambiar_nombre <nombre_archivo>`
-
-Donde "nombre_archivo" sería el nombre del archivo que se quiere correr. Cabe resaltar que este nombre archivo va a ser **únicamente** lo que se escribió a la hora de guardar el archivo en el punto 3. Es decir, **NO** se debe añadir ni *.txt* ni la ruta completa del archivo para que este funcione. Únicamente el nombre del archivo que se quiere correr y luego presionar la tecla enter.
-
-**NOTA:** Es posible utilizar cualquier archivo que cumpla con la misma estructura que tiene el archivo que se guardó en la interfaz. Pero es **importante** que dicho archivo se encuentre dentro de la carpeta **results**, esto para que el programa pueda reconocer el archivo.
-
-
-
-Por último, cabe aclarar que cuado se ejecute el último comando realizado (rosservice call), este pueda mostrar un error en la terminal. Dicho error es irrelevante debido a que no obstruye el funcionamiento del nodo. Por lo que se puede dar por terminado el cuarto y el último punto del taller.
+Para este punto se pedía hacer un nodo llamado *robot_manipulator_ping_pong* el cual permite, a través de este tópico, tomar un ping pong del color especificado.
+ 
