@@ -13,18 +13,18 @@ def setAngles(servo):
 	'''
 	angulo de los servos:
 
-	linear.x -> servo giratorio
-	linear.y -> servo base
-	linear.z -> servo mitad
+	linear.x -> servo giratorio  u,j
+	linear.y -> servo base i,k
+	linear.z -> servo mitad o,l
 	angular.x -> servo garra
 	'''
 	global final_position
 	link1 = 8
 	link2 = 17
-
-	theta_giro = servo.linear.x
-	theta_base = servo.linear.y
-	theta_mitad = servo.linear.z
+	
+	theta_giro = servo.linear.x *m.pi/180.0
+	theta_base = servo.linear.y*m.pi/180.0
+	theta_mitad = servo.linear.z*m.pi/180.0
 
 	arm_length =  m.cos(theta_base)*link1 + m.cos(theta_mitad)*link2
 	arm_height = m.sin(theta_base)*link1 + m.sin(theta_mitad)*link2
