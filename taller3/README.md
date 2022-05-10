@@ -146,5 +146,18 @@ En el informe presente en este repositorio, mirar el volumen de trabajo para esp
 
 
 ##### Punto 4
-Para este punto se pedía hacer un nodo llamado *robot_manipulator_ping_pong* el cual permite, a través de este tópico, tomar un ping pong del color especificado.
- 
+Para este punto se pedía hacer un nodo llamado *robot_manipulator_ping_pong* el cual permite, a través de este tópico, tomar un ping pong del color especificado. El color se especifica por terminal y contiene un rango RGB. Tras inicializar roscore y el movimiento del robot con la integración Arduino-ROS, en una nueva terminal se
+ejecuta dentro del workspace de robótica:
+  
+ `$devel/setup.bash`
+  
+  Para tomar el ping pong del color especificado se colocó una cámara web en la parte frontal del manipulador. Una vez realizado esto se realiza la
+planeación de trayectoria. Este punto utiliza bastantes recursos computacionales, se realiza una conexión master slave SSH para pasar el procesamiento de la
+Raspberry al computador. La cámara web es un nodo:
+  
+  `$ rosrun /usb cam`
+  
+ a través del tópico /usb cam (el cual contiene /usb cam/Image raw) con los tópicos /robot maipulator camera y n image view los cuales se encargan de procesar la
+imagen recibida y publican en el tópico /robot manipulator goal la información de movimiento.
+  
+  `$ rosrun robot_manipulator_camera.py color_detector.py `
