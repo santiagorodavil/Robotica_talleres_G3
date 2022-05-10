@@ -1,4 +1,4 @@
-# Taller 3 Robótica
+# Taller 2 Robótica
 *** Grupo 3 ***
 
 Dentro de este README se encontraráun paso a paso de cómo probar el funcionamiento de nuestro taller 2. Este taller se divide en 4 puntos, cabe resaltar que **todos los puntos deben ejectuarse desde el *workspace* donde se encuentre el taller**.  Otra cosa que se debe tener en cuenta es que ahora se van a depender del hardware del robot.
